@@ -35,6 +35,8 @@ L'objectif de ce projet est de créer un outil d'aide à la décision pour le re
    - Création d'un dashboard interactif avec des filtres permettant d'explorer les performances des joueurs en fonction de critères comme le prix, la vitesse, la défense, etc.
    - Intégration d'une carte interactive pour visualiser la répartition géographique des clubs.
 
+   ![tableau1](images/bi1.PNG)
+   ![tableau2](images/bi2.PNG)
 
 ## Résultat
 
