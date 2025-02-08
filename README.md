@@ -18,9 +18,14 @@ L'objectif de ce projet est de créer un outil d'aide à la décision pour le re
 1. **Modélisation des données (modèle en flocon et cube OLAP)**
    - Identification des dimensions clés : expérience, région et poste du joueur.
    - Construction d'un modèle en flocon avec une granularité fine pour une analyse approfondie.
+  
+     ![modélisation flocon](images/modelisation_flocon.png)
+  
+   - Création du cube OLAP et analyse multidimensionelle
+  
+     ![modélisation OLAP](images/cube_olap.png)
 
-2. **Traitement des données**
-   - Sélection et nettoyage des données provenant de FIFA pour ne conserver que celles pertinentes au projet.
+3. **Traitement des données**
    - Traitement des données manquantes et ajout de données externes (budget des clubs de Ligue 1).
    - Enrichissement du dataset avec des informations supplémentaires pour mieux comprendre les contextes des joueurs.
 
@@ -28,9 +33,6 @@ L'objectif de ce projet est de créer un outil d'aide à la décision pour le re
    - Création d'un dashboard interactif avec des filtres permettant d'explorer les performances des joueurs en fonction de critères comme le prix, la vitesse, la défense, etc.
    - Intégration d'une carte interactive pour visualiser la répartition géographique des clubs.
 
-4. **Création du cube OLAP et analyse**
-   - Définition des mesures et des agrégations nécessaires pour l'analyse multidimensionnelle.
-   - Application de différents filtres pour affiner l'analyse, notamment en se concentrant sur les joueurs évoluant en France.
 
 ## Résultat
 
