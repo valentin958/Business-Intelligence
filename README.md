@@ -28,6 +28,8 @@ L'objectif de ce projet est de créer un outil d'aide à la décision pour le re
 3. **Traitement des données**
    - Traitement des données manquantes et ajout de données externes (budget des clubs de Ligue 1).
    - Enrichissement du dataset avec des informations supplémentaires pour mieux comprendre les contextes des joueurs.
+  
+     ![data](images/data.png)
 
 3. **Visualisation des données**
    - Création d'un dashboard interactif avec des filtres permettant d'explorer les performances des joueurs en fonction de critères comme le prix, la vitesse, la défense, etc.
