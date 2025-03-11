@@ -69,11 +69,11 @@ Cette étape consiste à nettoyer et transformer les données de ventes fournies
    
    Nous avons utilisé un modèle en flocon (snowflake) pour relier la table des ventes (table de faits) à des tables de dimensions telles que géographie, magasins et clients.
 
-      Ventes (Sales) : Table principale contenant les ventes brutes et la marge.
-      Géographie (Geography) : Informations sur la localisation des magasins (région, pays).
-      Magasins (Shops) : Détails des magasins, comme la taille et le type.
-      Clients (Customer) : Données démographiques et comportement d'achat des clients.
-
+     - Ventes (Sales) : Table principale contenant les ventes brutes et la marge.
+     - Géographie (Geography) : Informations sur la localisation des magasins (région, pays).
+     - Magasins (Shops) : Détails des magasins, comme la taille et le type.
+     - Clients (Customer) : Données démographiques et comportement d'achat des clients.
+      
    
       Ce modèle permet non seulement une analyse détaillée et flexible des données, mais il réduit également la redondance des informations en centralisant les données liées aux dimensions (comme les clients, magasins ou géographies) dans des tables séparées. Cela optimise la gestion des données, améliore les performances des requêtes, et simplifie les mises à jour des    informations sans affecter la table des faits. En outre, ce modèle facilite l'ajout de nouvelles dimensions à l'avenir sans perturber la structure existante.
   
