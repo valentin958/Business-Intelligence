@@ -21,17 +21,17 @@ L'objectif de ce projet est de créer un outil d'aide à la décision pour le re
      ```python
      import pandas as pd
 
-# Charger le fichier Excel
+Charger le fichier Excel
 file_path = "DATA v2 (1).xlsx"
 xls = pd.ExcelFile(file_path)
 
-# Liste des feuilles à charger
+Liste des feuilles à charger
 sheet_names = xls.sheet_names
 
-# Dictionnaire pour stocker les DataFrames nettoyées
+Dictionnaire pour stocker les DataFrames nettoyées
 df_cleaned = {}
 
-# Charger et nettoyer les données de chaque feuille
+Charger et nettoyer les données de chaque feuille
 for sheet in sheet_names:
     df = xls.parse(sheet)
     
