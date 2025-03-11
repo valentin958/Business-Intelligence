@@ -1,16 +1,14 @@
 
-# Projet Business Intelligence : Recrutement de joueurs de football
+# Projet Business Intelligence : Rapide étude de cas d'une base de données (Test) d'un magasin "Tout-@-Vendre"
 
 ## Contexte
 
-Le football est un domaine vaste et complexe qui englobe divers aspects, dont l'analyse de matchs, la gestion d'équipe et le recrutement des joueurs. Passionnés de football et curieux de combiner notre expertise en Business Intelligence avec notre passion, nous avons choisi de concentrer notre projet sur un aspect clé du football : le recrutement des joueurs. 
+Le client souhaite exploiter ses données de ventes pour identifier les points forts et faibles de ses magasins, en prenant en compte la saisonnalité et la diversité des tailles des magasins.
 
-Le challenge consistait à développer un outil d'aide à la décision pour faciliter le recrutement de joueurs en utilisant des données extraites du jeu vidéo FIFA. 
-Après une recherche approfondie, nous avons opté pour l'utilisation des données disponibles sur Kaggle, qui offrent une description détaillée des performances des joueurs.
 
 ## Objectif
 
-L'objectif de ce projet est de créer un outil d'aide à la décision pour le recrutement de joueurs de football en analysant les performances des joueurs basées sur les données extraites du jeu vidéo FIFA. Ce projet vise à fournir une visualisation dynamique et interactive des joueurs de Ligue 1, permettant aux recruteurs de mieux évaluer les joueurs et de prendre des décisions éclairées pour renforcer les équipes.
+L'objectif de ce projet est d'analyser les ventes brutes, la marge et les caractéristiques des magasins pour identifier les points forts et faibles, en tenant compte des effets de saisonnalité, afin d'ajuster la stratégie commerciale et optimiser les performances des différents magasins.
 
 ## Les étapes
 
@@ -48,9 +46,9 @@ L'objectif de ce projet est de créer un outil d'aide à la décision pour le re
      
       #Sauvegarder les DataFrames nettoyées dans un nouveau fichier Excel
       output_file_path = "dataframe_clean.xlsx"
-      with pd.ExcelWriter(output_file_path) as writer:
-       for sheet, df in df_cleaned.items():
-           df.to_excel(writer, sheet_name=sheet, index=False)
+         with pd.ExcelWriter(output_file_path) as writer:
+             for sheet, df in df_cleaned.items():
+                 df.to_excel(writer, sheet_name=sheet, index=False)
 
       print("Structure du DataFrame nettoyé :")
       for sheet, df in df_cleaned.items():
@@ -65,20 +63,40 @@ L'objectif de ce projet est de créer un outil d'aide à la décision pour le re
   
 
 
-3. **Traitement des données**
-   - Traitement des données manquantes et ajout de données externes (budget des clubs de Ligue 1).
-   - Enrichissement du dataset avec des informations supplémentaires pour mieux comprendre les contextes des joueurs.
+2. **Modélisation des données**
+   
+   Nous avons utilisé un modèle en flocon (snowflake) pour relier la table des ventes (table de faits) à des tables de dimensions telles que géographie, magasins et clients.
+
+      Ventes (Sales) : Table principale contenant les ventes brutes et la marge.
+      Géographie (Geography) : Informations sur la localisation des magasins (région, pays).
+      Magasins (Shops) : Détails des magasins, comme la taille et le type.
+      Clients (Customer) : Données démographiques et comportement d'achat des clients.
+
+   
+      Ce modèle permet non seulement une analyse détaillée et flexible des données, mais il réduit également la redondance des informations en centralisant les données liées aux dimensions (comme les clients, magasins ou géographies) dans des tables séparées. Cela optimise la gestion des données, améliore les performances des requêtes, et simplifie les mises à jour des    informations sans affecter la table des faits. En outre, ce modèle facilite l'ajout de nouvelles dimensions à l'avenir sans perturber la structure existante.
   
-     ![data](images/data.png)
+
 
 3. **Visualisation des données**
-   - Création d'un dashboard interactif avec des filtres permettant d'explorer les performances des joueurs en fonction de critères comme le prix, la vitesse, la défense, etc.
-   - Intégration d'une carte interactive pour visualiser la répartition géographique des clubs.
 
-   ![tableau1](images/bi1.PNG)
-   ![tableau2](images/bi2.PNG)
+Le dashboard interactif offre plusieurs fonctionnalités permettant d'analyser et de visualiser les performances de l'entreprise de manière intuitive et dynamique :
+
+- **Carte centrale de la France** : La carte interactive affiche l'emplacement des différents magasins de la marque à travers la France. L'utilisateur peut zoomer et naviguer sur la carte pour localiser les magasins et obtenir des informations détaillées sur leur performance.
+
+- **KPIs à analyser** : Des indicateurs clés de performance (KPIs) sont affichés pour permettre une analyse rapide de la santé financière et opérationnelle de l'entreprise. Les KPIs incluent :
+  - **Ventes brutes** : Mesure des ventes totales réalisées par chaque magasin.
+  - **Coût des ventes** : Calcul des coûts associés à la production ou à la distribution des produits.
+  - **Ventes nettes** : Ventes après déduction des retours et remises.
+  - **Coûts indirects** : Dépenses non directement liées aux ventes mais essentielles à l'opération (marketing, gestion, etc.).
+  - **Revenu net** : Revenu après déduction des coûts directs et indirects.
+  - **Nombre de clients par type** : Répartition des clients en fonction de leur profil (BtoB ou BtoC)
+
+- **Historisation du nombre de commandes par mois** : Des diagrammes en bâtons permettent de suivre l'évolution des commandes au fil du temps. Les utilisateurs peuvent filtrer par année pour analyser les tendances et observer les effets de la saisonnalité sur les ventes.
+
+- **Interactivité avec les magasins** : En cliquant sur un magasin spécifique sur la carte, tous les chiffres du dashboard se mettent à jour automatiquement pour afficher les données relatives à ce magasin. Cela permet de zoomer sur les performances individuelles de chaque magasin et de comparer facilement les résultats entre différents sites.
+
+
 
 ## Résultat
 
-L'outil facilite le processus de recrutement en offrant des fonctionnalités de filtrage et de tri sur des variables telles que le prix, la note générale, la vitesse, la défense, et bien d'autres. Il inclut également une carte interactive des clubs de Ligue 1, permettant une analyse géographique des données. 
-Ce tableau de bord permet aux recruteurs d'identifier plus facilement les talents émergents et de prendre des décisions éclairées pour renforcer les équipes de football.
+Le modèle de données et le dashboard interactif permettent d'extraire des insights précieux pour l'entreprise, en identifiant clairement les points forts et faibles des magasins. Grâce à la visualisation dynamique et aux KPIs clés, il est possible d’observer l'impact des décisions stratégiques et d’ajuster les actions en fonction des performances réelles.
