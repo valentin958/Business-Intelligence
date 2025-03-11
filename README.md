@@ -14,7 +14,9 @@ L'objectif de ce projet est d'analyser les ventes brutes, la marge et les caract
 
 
 1. **Préparation des données (Data preprocessing)**
-   Cette étape consiste à nettoyer et transformer les données de ventes fournies par le client. Elle inclut la gestion des valeurs manquantes, la normalisation des formats de données, l'identification et l'élimination des valeurs aberrantes (par exemple, les ventes anormalement élevées), ainsi que la création de nouvelles variables pour analyser la saisonnalité et la performance des magasins.
+
+   
+Cette étape consiste à nettoyer et transformer les données de ventes fournies par le client. Elle inclut la gestion des valeurs manquantes, la normalisation des formats de données, l'identification et l'élimination des valeurs aberrantes (par exemple, les ventes anormalement élevées), ainsi que la création de nouvelles variables pour analyser la saisonnalité et la performance des magasins.
   
      ```python
      import pandas as pd
@@ -63,7 +65,7 @@ L'objectif de ce projet est d'analyser les ventes brutes, la marge et les caract
   
 
 
-2. **Modélisation des données**
+3. **Modélisation des données**
    
    Nous avons utilisé un modèle en flocon (snowflake) pour relier la table des ventes (table de faits) à des tables de dimensions telles que géographie, magasins et clients.
 
@@ -77,7 +79,7 @@ L'objectif de ce projet est d'analyser les ventes brutes, la marge et les caract
   
 
 
-3. **Visualisation des données**
+4. **Visualisation des données**
 
 Le dashboard interactif offre plusieurs fonctionnalités permettant d'analyser et de visualiser les performances de l'entreprise de manière intuitive et dynamique :
 
