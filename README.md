@@ -14,11 +14,11 @@ L'objectif de ce projet est d'analyser les ventes brutes, la marge et les caract
 
 
 1. **Préparation des données (Data preprocessing)**
-
+   
 Cette étape consiste à nettoyer et transformer les données de ventes fournies par le client. Elle inclut la gestion des valeurs manquantes, la normalisation des formats de données, l'identification et l'élimination des valeurs aberrantes (par exemple, les ventes anormalement élevées), ainsi que la création de nouvelles variables pour analyser la saisonnalité et la performance des magasins.
 
   
-     ```python
+   ```python
      import pandas as pd
 
       # Charger le fichier Excel
@@ -62,7 +62,7 @@ Cette étape consiste à nettoyer et transformer les données de ventes fournies
           print("\nValeurs manquantes par colonne :")
           print(df.isnull().sum())  # Affiche le nombre de valeurs manquantes par colonne
           print("-" * 50)
-  
+   ```
 
 
 3. **Modélisation des données**
