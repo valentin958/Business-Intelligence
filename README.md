@@ -1,14 +1,16 @@
 
-# Projet Business Intelligence : Rapide étude de cas d'une base de données d'un magasin "Tout-@-Vendre"
+# Projet Business Intelligence : Développement d'un dashboard sur Tableau pour aider à la décision dans le recrutement de joueurs de football en analysant les données de performance extraites du jeu vidéo FIFA.
 
 ## Contexte
 
-Le client souhaite exploiter ses données de ventes pour identifier les points forts et faibles de ses magasins, en prenant en compte la saisonnalité et la diversité des tailles des magasins.
+Dans le cadre de l'optimisation des processus de recrutement de joueurs de football, ce projet de développement d'un tableau de bord sur Tableau s'inscrit dans une analyse approfondie des données de performance extraites du jeu vidéo FIFA.
+
 
 
 ## Objectif
 
-L'objectif de ce projet est d'analyser les ventes brutes, la marge et les caractéristiques des magasins pour identifier les points forts et faibles, en tenant compte des effets de saisonnalité, afin d'ajuster la stratégie commerciale et optimiser les performances des différents magasins.
+L'objectif est de fournir aux recruteurs un outil permettant d’évaluer les statistiques des joueurs virtuels de manière efficace et précise, tout en facilitant la prise de décision sur leur potentiel en fonction des critères de performance clés. Ce projet s'adresse aux recruteurs et analystes sportifs, afin d'aider à la détection de talents à travers des données fiables et facilement interprétables.
+
 
 ## Les étapes
 
