@@ -65,6 +65,8 @@ Cette étape consiste à nettoyer et transformer les données de ventes fournies
    ```
 
 
+
+
 3. **Modélisation des données**
    
    Nous avons utilisé un modèle en flocon (snowflake) pour relier la table des ventes (table de faits) à des tables de dimensions telles que géographie, magasins et clients.
@@ -79,9 +81,13 @@ Cette étape consiste à nettoyer et transformer les données de ventes fournies
   
 
 
+
+
 4. **Visualisation des données**
 
+
 Le dashboard interactif offre plusieurs fonctionnalités permettant d'analyser et de visualiser les performances de l'entreprise de manière intuitive et dynamique :
+
 
 - **Carte centrale de la France** : La carte interactive affiche l'emplacement des différents magasins de la marque à travers la France. L'utilisateur peut zoomer et naviguer sur la carte pour localiser les magasins et obtenir des informations détaillées sur leur performance.
 
