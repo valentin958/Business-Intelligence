@@ -21,46 +21,47 @@ L'objectif de ce projet est de créer un outil d'aide à la décision pour le re
      ```python
      import pandas as pd
 
-Charger le fichier Excel
-file_path = "DATA v2 (1).xlsx"
-xls = pd.ExcelFile(file_path)
+      # Charger le fichier Excel
+      file_path = "DATA v2 (1).xlsx"
+      xls = pd.ExcelFile(file_path)
 
-Liste des feuilles à charger
-sheet_names = xls.sheet_names
+      # Liste des feuilles à charger
+      sheet_names = xls.sheet_names
 
-Dictionnaire pour stocker les DataFrames nettoyées
-df_cleaned = {}
+      #Dictionnaire pour stocker les DataFrames nettoyées
+      df_cleaned = {}
 
-Charger et nettoyer les données de chaque feuille
-for sheet in sheet_names:
-    df = xls.parse(sheet)
+      #Charger et nettoyer les données de chaque feuille
+      for sheet in sheet_names:
+          df = xls.parse(sheet)
     
-    # Suppression des colonnes inutiles (exemple de la feuille 'sales')
-    if 'Unnamed: 0' in df.columns:
-        df = df.drop(columns=['Unnamed: 0'], errors='ignore')
+          #Suppression des colonnes inutiles (exemple de la feuille 'sales')
+          if 'Unnamed: 0' in df.columns:
+              df = df.drop(columns=['Unnamed: 0'], errors='ignore')
 
-    # Exemple pour détecter et supprimer des valeurs aberrantes pour la colonne 'Ventes bruts'
-    if 'Ventes bruts' in df.columns:
-        df = df[df['Ventes bruts'] <= 255]
+          #Exemple pour détecter et supprimer des valeurs aberrantes pour la colonne 'Ventes bruts'
+          if 'Ventes bruts' in df.columns:
+              df = df[df['Ventes bruts'] <= 255]
 
-    # Ajouter le DataFrame nettoyé au dictionnaire
-    df_cleaned[sheet] = df
-# Sauvegarder les DataFrames nettoyées dans un nouveau fichier Excel
-output_file_path = "dataframe_clean.xlsx"
-with pd.ExcelWriter(output_file_path) as writer:
-    for sheet, df in df_cleaned.items():
-        df.to_excel(writer, sheet_name=sheet, index=False)
+          # Ajouter le DataFrame nettoyé au dictionnaire
+          df_cleaned[sheet] = df
+     
+      #Sauvegarder les DataFrames nettoyées dans un nouveau fichier Excel
+      output_file_path = "dataframe_clean.xlsx"
+      with pd.ExcelWriter(output_file_path) as writer:
+       for sheet, df in df_cleaned.items():
+           df.to_excel(writer, sheet_name=sheet, index=False)
 
-print("Structure du DataFrame nettoyé :")
-for sheet, df in df_cleaned.items():
-    print(f"\nAnalyse de la feuille : {sheet}")
-    print("Aperçu des premières lignes :")
-    print(df.head())  # Affiche les 5 premières lignes du DataFrame
-    print("\nInformation générale sur la structure :")
-    print(df.info())  # Affiche les types de données, nombre de valeurs non-nulles, etc.
-    print("\nValeurs manquantes par colonne :")
-    print(df.isnull().sum())  # Affiche le nombre de valeurs manquantes par colonne
-    print("-" * 50)
+      print("Structure du DataFrame nettoyé :")
+      for sheet, df in df_cleaned.items():
+          print(f"\nAnalyse de la feuille : {sheet}")
+          print("Aperçu des premières lignes :")
+          print(df.head())  # Affiche les 5 premières lignes du DataFrame
+          print("\nInformation générale sur la structure :")
+          print(df.info())  # Affiche les types de données, nombre de valeurs non-nulles, etc.
+          print("\nValeurs manquantes par colonne :")
+          print(df.isnull().sum())  # Affiche le nombre de valeurs manquantes par colonne
+          print("-" * 50)
   
 
 
